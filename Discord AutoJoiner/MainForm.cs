@@ -16,7 +16,7 @@ namespace Discord_AutoJoiner
 
         private void joinButton_Click(object sender, EventArgs e)
         {
-            var values = new Dictionary<string, dynamic> { { "cmd", "INVITE_BROWSER" }, { "args", new Dictionary<string, string> { {"code", "WbYybJZGTz"} }  }, { "nonce", Guid.NewGuid().ToString() } };
+            var values = new Dictionary<string, dynamic> { { "cmd", "INVITE_BROWSER" }, { "args", new Dictionary<string, string> { {"code", inviteBox.Text} }  }, { "nonce", Guid.NewGuid().ToString() } };
             var content = JsonConvert.SerializeObject(values);
             var request = WebRequest.Create("http://127.0.0.1:6463/rpc?v=1");
             request.Method = "POST";
